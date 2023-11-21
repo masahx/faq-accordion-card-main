@@ -1,0 +1,163 @@
+:root {
+
+    --color-grad-1: hsl(273, 75%, 66%);
+    --color-grad-2: hsl(240, 73%, 65%);
+    --color-card: #ffffff;
+    --divider: hsl(240, 5%, 91%);
+    --answer: hsl(240, 6%, 50%);
+    --question-closed: hsl(237, 12%, 33%);
+    --heading: hsl(238, 29%, 16%);
+
+}
+
+html {
+
+    height: 768px;
+
+}
+
+body {
+
+    background-image: linear-gradient(var(--color-grad-1), var(--color-grad-2));
+    font-size: 12px;
+    font-family: 'Kumbh Sans', sans-serif;
+    margin: 0px;
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+
+}
+
+img {
+
+    height: 100%;
+    width: 100%;
+ /*   filter: drop-shadow(rgba(240, 240, 252, 0.8) 0px 30px 0px); */
+
+}
+
+main {
+    
+    width: 325px;
+    margin: auto;
+    position: relative;
+
+}
+
+figure {
+    
+    height: 180px;
+    width: 238px;    
+    margin: 0 auto; 
+    position: absolute;
+    left: 43.5px;    
+    z-index: 2;
+    bottom: 460px;
+
+}
+
+.shadow {
+
+    width: 240px;
+    margin-top: 0;
+    height: 104px;
+    bottom: 430px;
+    position: absolute;
+    left: 42.5px;
+
+}
+
+.questions {
+
+    background-color: var(--color-card);
+    border-radius: 25px;
+    padding: 132px 22px 50px 22px;  
+    bottom: 174px;
+    z-index: 0;
+    box-sizing: border-box;
+    width: 325px;
+    margin: 145px auto 0;    
+    
+}
+
+h1 {
+
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    margin: 0 0 14px;
+    color: var(--heading);
+
+}
+
+.one-question {
+
+    border-bottom: 1px solid var(--divider);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;  
+    cursor: pointer;  
+   
+
+}
+
+.one-question p {
+
+    margin-bottom: 0; 
+    margin-top: 10px;   
+    width: 270px;
+    color: var(--answer);
+    line-height: 1.5;
+
+}
+
+h2 {
+
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 270px;
+    color: var(--heading);
+
+}
+
+button {
+
+    border-style: none;
+    background-image: url('images/icon-arrow-down.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0);
+    height: 12px;
+    cursor: pointer;
+
+}
+
+.closed h2 {
+
+    font-weight: 400;
+    color: var(--question-closed);
+
+}
+
+.opened button {
+
+    transform: rotate(180deg);
+
+}
+
+.closed p {
+
+    display: none;
+
+}
+
+footer {
+    
+    bottom: 40px;
+    height: 83px;
+
+}
