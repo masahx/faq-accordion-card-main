@@ -15,12 +15,12 @@
 
   <title>Frontend Mentor | FAQ Accordion Card</title>
   
-   <!-- -->
+   <!-- 
   <script src="lib/jasmine-5.1.0/jasmine.js"></script>
   <script src="lib/jasmine-5.1.0/jasmine-html.js"></script>
-  <script src="lib/jasmine-5.1.0/boot0.js"></script> 
+  <script src="lib/jasmine-5.1.0/boot0.js"></script> -->
  <!--  optional: include a file here that configures the Jasmine env -->
-  <script src="lib/jasmine-5.1.0/boot1.js"></script>  <!-- -->
+ <!-- <script src="lib/jasmine-5.1.0/boot1.js"></script>  -->
  <!--  Feel free to remove these styles or customise in your own stylesheet 👍  -->
 
   <style>
@@ -52,6 +52,12 @@
       </section>
     </section>
   </main>
+  <footer class="attribution">
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by mhx.
+    </p>
+  </footer>
   <!--
   How many team members can I invite?
   You can invite up to 2 additional users on the Free plan. There is no limit on 
@@ -70,12 +76,7 @@
   Do you provide additional support?
   Chat and email support is available 24/7. Phone lines are open during normal business hours.
 -->
-  <footer class="attribution">
-    <p>
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by mhx.
-    </p>
-  </footer>
+  
 
   <script>
 
@@ -94,6 +95,8 @@
     var answer = questionOneList[1].querySelectorAll("p")[0];
     var questions = document.getElementsByClassName("questions")[0];
     var justQ = questions.querySelector("#pitanja");
+    var figure = document.getElementsByTagName("figure")[0];    
+    var html = document.getElementsByTagName("html")[0];
 
     function togle(oneQElem) {
   
@@ -118,8 +121,21 @@
 
     }
 
-    var node;
+    function extractPxValue(pxValue) {
 
+      return pxValue.substring(0, pxValue.length - 2);
+
+    }
+
+    function myMargin(smaller, bigger) {
+        
+      return (extractPxValue(window.getComputedStyle(bigger).getPropertyValue("width")) 
+              - extractPxValue(window.getComputedStyle(smaller).getPropertyValue("width"))) / 2;
+
+    }
+
+    var node;
+  
     for(var i = 0; i < 3; i++) {
       
       node = document.createElement("section");
@@ -136,7 +152,7 @@
 
 
   </script>
-  <!-- include spec files here... -->
+  <!-- include spec files here...   
   <script src="spec/JSTestAcc.js"></script> 
-  <script src="spec/JSTestJS.js"></script>   
+  <script src="spec/JSTestJS.js"></script>  -->
 </html>

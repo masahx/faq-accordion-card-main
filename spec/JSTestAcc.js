@@ -1,10 +1,8 @@
 describe('FAQ', function() {
 
-    var img = document.getElementsByTagName("img")[0];
-    var figure = document.getElementsByTagName("figure")[0];
+    var img = document.getElementsByTagName("img")[0];    
     var shadow = document.getElementsByTagName("figure")[1];
     var body = document.getElementsByTagName("body")[0];
-    var html = document.getElementsByTagName("html")[0];
     var h1 = questions.querySelector("h1");
     var buttons = questions.querySelectorAll("button");
     var closedTitle = document.querySelector(".closed h2");
@@ -465,12 +463,6 @@ describe('FAQ', function() {
 
     })
 
-    it('html height is 768px', function() {
-
-        expect(window.getComputedStyle(html).getPropertyValue("height")).toBe("768px");
-
-    })
-
     it('figure margin-top is 0px', function() {
 
         expect(window.getComputedStyle(figure).getPropertyValue("margin-top")).toBe("0px");
@@ -539,12 +531,6 @@ describe('FAQ', function() {
 
     })
 
-    it('body is relative position', function() {
-
-        expect(window.getComputedStyle(body).getPropertyValue("position"))
-                                            .toBe("relative");
-
-    })
 
     it('footer is relative 40px bottom', function() {
 
@@ -591,13 +577,6 @@ describe('FAQ', function() {
 
     })
 
-    it('body height is 768px', function() {
-
-        expect(window.getComputedStyle(body).getPropertyValue("height"))
-                                            .toBe("768px");
-
-    })
-
     it('body box-sizing is border-box', function() {
 
         expect(window.getComputedStyle(body).getPropertyValue("box-sizing"))
@@ -612,10 +591,10 @@ describe('FAQ', function() {
 
     })
 
-    it('question margin-top is 145px', function() {
+    it('question margin-top is 0px', function() {
 
         expect(window.getComputedStyle(questions).getPropertyValue("margin-top"))
-                                                 .toBe("145px");
+                                                 .toBe("0px");
 
     })
 
@@ -685,10 +664,10 @@ describe('FAQ', function() {
 
     });
 
-    it('shadow is top -2px', function() {
+    it('shadow is top 145px', function() {
 
         expect(window.getComputedStyle(shadow).getPropertyValue("top"))
-                                              .toBe("-2px");
+                                              .toBe("145px");
 
     });
     
@@ -706,10 +685,10 @@ describe('FAQ', function() {
 
     });
 
-    it('figure bottom is 460', function() {
+    it('figure top is 40', function() {
 
-        expect(window.getComputedStyle(figure).getPropertyValue("bottom"))
-                                              .toBe("460px");
+        expect(window.getComputedStyle(figure).getPropertyValue("top"))
+                                              .toBe("40px");
 
     });
 
@@ -726,6 +705,62 @@ describe('FAQ', function() {
                                             .toBe("145px");
 
     });
+
+    it('body position is static', function() {
+
+        expect(window.getComputedStyle(body).getPropertyValue("position"))
+                                            .toBe("static");
+
+    });
+
+    it('footer display is flex', function() {
+
+        expect(window.getComputedStyle(footer).getPropertyValue("display"))
+                                              .toBe("flex");
+
+    });
+
+    it('footer flex direction is column', function() {
+
+        expect(window.getComputedStyle(footer).getPropertyValue("flex-direction"))
+                                              .toBe("column");
+
+    });
+
+    it('footer justify-content is center', function() {
+
+        expect(window.getComputedStyle(footer).getPropertyValue("justify-content"))
+                                              .toBe("center");
+
+    });
+/*   function myMargin(smaller, bigger) {
+        
+        return (extractPxValue(window.getComputedStyle(bigger).getPropertyValue("width")) 
+                - extractPxValue(window.getComputedStyle(smaller).getPropertyValue("width"))) / 2;
+
+    } */
+
+    it('figure absolute on center', function() {
+
+        expect(window.getComputedStyle(figure).getPropertyValue("left"))
+                                              .toBe("43.5px");
+
+    });
+
+    it('height of html', function() {
+
+        questionOneList[4].click();  
+    //   jasmine_html-reporter
+        var testResults = extractPxValue(window.getComputedStyle(html.querySelector(".jasmine_html-reporter")).getPropertyValue("height"));
+        console.log(testResults);
+        expect(extractPxValue(window.getComputedStyle(html).getPropertyValue("height")) - testResults) 
+                                    .toBe(800);
+        questionOneList[4].click();
+
+    });
+
+
+
 
 
 });

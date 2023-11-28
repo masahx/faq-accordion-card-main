@@ -12,7 +12,7 @@
 
 html {
 
-    height: 768px;
+  /*  height: 768px;*/
 
 }
 
@@ -22,7 +22,6 @@ body {
     font-size: 12px;
     font-family: 'Kumbh Sans', sans-serif;
     margin: 0px;
-    position: relative;
     height: 100%;
     box-sizing: border-box;
 
@@ -41,6 +40,7 @@ main {
     width: 325px;
     margin: auto;
     position: relative;
+    padding-top: 145px;
 
 }
 
@@ -53,6 +53,7 @@ figure {
     left: 43.5px;    
     z-index: 2;
     bottom: 460px;
+    top: 40px;
 
 }
 
@@ -61,6 +62,7 @@ figure {
     width: 240px;
     margin-top: 0;
     height: 104px;
+    top: 145px;
     bottom: 430px;
     position: absolute;
     left: 42.5px;
@@ -76,7 +78,7 @@ figure {
     z-index: 0;
     box-sizing: border-box;
     width: 325px;
-    margin: 145px auto 0;    
+    margin: 0 auto;    
     
 }
 
@@ -99,8 +101,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;  
-    cursor: pointer;  
-   
+    cursor: pointer;     
 
 }
 
@@ -159,5 +160,8 @@ footer {
     
     bottom: 40px;
     height: 83px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
 }
