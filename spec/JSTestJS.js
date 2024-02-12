@@ -12,6 +12,8 @@ describe('JS', function() {
                    "Yes! Send us a message and we’ll process your request no questions asked",
                    "Chat and email support is available 24/7. Phone lines are open during normal business hours"];
  
+    var srcFile = document.getElementsByTagName("script")[5].getAttribute("src");
+
     it('open and close question', function() {
 
         question.click();
@@ -116,6 +118,26 @@ describe('JS', function() {
         for(var i = 2; i < 5; i++) {
 
             expect(questiones[i].getAttribute("onclick")).toBe("togle(this)");
+
+        }
+
+    })
+
+    it('spec file when small screen', function() {
+        
+        if (window.innerWidth < 1000) {
+
+            expect(srcFile).toBe("spec/JSTestAcc.js");
+
+        }
+
+    })
+
+    it('spec file when big screen', function() {
+        
+        if (window.innerWidth >= 1000) {
+
+            expect(srcFile).toBe("spec/JSTestAccDesktop.js");
 
         }
 

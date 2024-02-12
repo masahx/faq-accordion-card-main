@@ -1,7 +1,8 @@
 describe('FAQ', function() {
 
+    var figures = document.getElementsByTagName("figure");
     var img = document.getElementsByTagName("img")[0];    
-    var shadow = document.getElementsByTagName("figure")[1];
+    var shadow = figures[1];
     var body = document.getElementsByTagName("body")[0];
     var h1 = questions.querySelector("h1");
     var buttons = questions.querySelectorAll("button");
@@ -11,6 +12,7 @@ describe('FAQ', function() {
     var main = document.getElementsByTagName("main")[0];
     var footer = document.getElementsByTagName("footer")[0];
     var copy = footer.querySelector("p");
+    var figureMob = figures[0];
 
     
     function extractPxValue(pxValue) {
@@ -76,7 +78,7 @@ describe('FAQ', function() {
 
     it('img src', function() {
 
-        expect(img.getAttribute("src")).toBe("images/illustration-woman-online-mobile.svg");
+        expect(img.getAttribute("src")).toBe("images/illustration-woman-online-desktop.svg");
 
     });
 
@@ -95,6 +97,12 @@ describe('FAQ', function() {
     it('figure width', function() {
 
         expect(window.getComputedStyle(figure).getPropertyValue("width")).toBe("238px");
+
+    })
+
+    it('figure mob none display', function() {
+
+        expect(window.getComputedStyle(figureMob).getPropertyValue("display")).toBe("none");
 
     })
 
@@ -707,10 +715,10 @@ describe('FAQ', function() {
 
     });
 
-    it('main padding is 145px', function() {
+    it('main padding is 128px', function() {
 
         expect(window.getComputedStyle(main).getPropertyValue("padding-top"))
-                                            .toBe("145px");
+                                            .toBe("128px");
 
     });
 
@@ -827,16 +835,17 @@ describe('FAQ', function() {
 
     }); 
 /*
-    it('big screen, desktop image', function() {
+    it('big screen has desktop image', function() {
 
-        window.resizeTo(1480, 1000);
+     //   window.resizeTo(1480, 1000);
         var width = window.innerWidth;
         console.log("evo " + width + " ");
         expect(img.getAttribute("src")).toBe("images/illustration-woman-online-desktop.svg");
-        window.resizeTo(500, 1000);
+        window.resizeBy(50, 100);
         width = window.innerWidth;
-        console.log("evo " + width + " ");
+        console.log("evo 2 " + width + " ");
 
     });
 */
+
 });
