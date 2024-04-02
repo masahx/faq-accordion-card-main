@@ -13,6 +13,11 @@ describe('FAQ', function() {
     var footer = document.getElementsByTagName("footer")[0];
     var copy = footer.querySelector("p");
     var figureMob = figures[0];
+    var desktops = document.querySelectorAll("figure.desktop");
+    var figureDeskt = desktops[1];
+    var shadowDesktImage = desktops[0].children[0];
+    var shadowDeskt = desktops[0];
+    var sectDeskt = figureDeskt.parentElement;    
 
     
     function extractPxValue(pxValue) {
@@ -76,12 +81,6 @@ describe('FAQ', function() {
 
     });
 
-    it('img src', function() {
-
-        expect(img.getAttribute("src")).toBe("images/illustration-woman-online-desktop.svg");
-
-    });
-
     it('img alt', function() {
 
         expect(img.getAttribute("alt")).not.toBe(null);
@@ -142,15 +141,9 @@ describe('FAQ', function() {
 
     })
 
-    it('align center h1 FAQ section', function() {
-
-        expect(window.getComputedStyle(h1).getPropertyValue("text-align")).toBe("center");
-
-    })
-
     it('padding-top FAQ section', function() {
 
-        expect(window.getComputedStyle(questions).getPropertyValue("padding-top")).toBe("132px");
+        expect(window.getComputedStyle(questions).getPropertyValue("padding-top")).toBe("0px");
 
     })
     
@@ -162,19 +155,19 @@ describe('FAQ', function() {
 
     it('margin-bottom h1 FAQ section', function() {
 
-        expect(window.getComputedStyle(h1).getPropertyValue("margin-bottom")).toBe("14px");
+        expect(window.getComputedStyle(h1).getPropertyValue("margin-bottom")).toBe("20px");
 
     })
 
     it('questions padding right', function() {
 
-        expect(window.getComputedStyle(questions).getPropertyValue("padding-right")).toBe("22px");
+        expect(window.getComputedStyle(questions).getPropertyValue("padding-right")).toBe("0px");
 
     })
 
     it('questions padding left', function() {
 
-        expect(window.getComputedStyle(questions).getPropertyValue("padding-left")).toBe("22px");
+        expect(window.getComputedStyle(questions).getPropertyValue("padding-left")).toBe("0px");
 
     })
 
@@ -250,9 +243,9 @@ describe('FAQ', function() {
 
     })
 
-    it('questions padding bottom 50px', function() {
+    it('questions padding bottom 0px', function() {
 
-        expect(window.getComputedStyle(questions).getPropertyValue("padding-bottom")).toBe("50px");
+        expect(window.getComputedStyle(questions).getPropertyValue("padding-bottom")).toBe("0px");
 
     })
 
@@ -436,13 +429,7 @@ describe('FAQ', function() {
         }
 
     })
-   
-    it('figure margin left is auto', function() {
-
-        expect(window.getComputedStyle(figure).getPropertyValue("margin-left"))
-                     .toBe("0px");
-
-    })
+  
 
     it('h2 width is 270px', function() {
 
@@ -475,12 +462,6 @@ describe('FAQ', function() {
     it('figure margin-top is 0px', function() {
 
         expect(window.getComputedStyle(figure).getPropertyValue("margin-top")).toBe("0px");
-
-    })
-
-    it('questions section relative from bottom', function() {
-
-        expect(window.getComputedStyle(questions).getPropertyValue("bottom")).toBe("174px");
 
     })
 
@@ -548,13 +529,6 @@ describe('FAQ', function() {
 
     })
 
-    it('questions are 325px wide for small screen', function() {
-
-        expect(window.getComputedStyle(questions).getPropertyValue("width"))
-                                                 .toBe("325px");
-
-    }); // should be širok nešto, vidi u Paintu
-
     it('white thing margin right is auto', function() {
 
         //    var figureW = window.getComputedStyle(figure).getPropertyValue("width");
@@ -614,23 +588,6 @@ describe('FAQ', function() {
 
     });
 
-    it('shadow left or right', function() {
-
-        var marg = extractPxValue(window.getComputedStyle(questions).getPropertyValue("width")) / 2 
-                 - extractPxValue(window.getComputedStyle(shadow).getPropertyValue("width")) / 2;
-
-        expect(window.getComputedStyle(shadow).getPropertyValue("left"))
-                                              .toBe(marg + "px");
-
-    });
-
-    it('main width 325px', function() {
-
-        expect(window.getComputedStyle(main).getPropertyValue("width"))
-                                            .toBe("325px");
-
-    })
-
     it('main position relative', function() {
 
         expect(window.getComputedStyle(main).getPropertyValue("position"))
@@ -649,13 +606,6 @@ describe('FAQ', function() {
 
         expect(window.getComputedStyle(main).getPropertyValue("margin-bottom"))
                                             .toBe("0px");
-
-    })
-
-    it('question position static', function() {
-
-        expect(window.getComputedStyle(questions).getPropertyValue("position"))
-                                                 .toBe("static");
 
     })
  
@@ -679,14 +629,14 @@ describe('FAQ', function() {
                                               .toBe("430px");
 
     });
+    
+    it('figure is absolute positioned', function() {
 
-    it('shadow is top 145px', function() {
-
-        expect(window.getComputedStyle(shadow).getPropertyValue("top"))
-                                              .toBe("145px");
+        expect(window.getComputedStyle(figure).getPropertyValue("position"))
+                                              .toBe("absolute");
 
     });
-    
+
     it('figure is absolute positioned', function() {
 
         expect(window.getComputedStyle(figure).getPropertyValue("position"))
@@ -698,13 +648,6 @@ describe('FAQ', function() {
 
         expect(window.getComputedStyle(figure).getPropertyValue("z-index"))
                                               .toBe("2");
-
-    });
-
-    it('figure top is 40', function() {
-
-        expect(window.getComputedStyle(figure).getPropertyValue("top"))
-                                              .toBe("40px");
 
     });
 
@@ -807,19 +750,6 @@ describe('FAQ', function() {
 
     });  
 
-    it('copyright margin-top is 33px', function() {
-
-        expect(window.getComputedStyle(copy).getPropertyValue("margin-top"))
-                                            .toBe("33px");
-
-    }); 
-
-    it('copyright margin-bottom is 33px', function() {
-
-        expect(window.getComputedStyle(copy).getPropertyValue("margin-bottom"))
-                                            .toBe("33px");
-
-    }); 
 
     it('justify-content is space-between', function() {
 
@@ -834,18 +764,292 @@ describe('FAQ', function() {
                                               .toBe("auto");
 
     }); 
-/*
+
+
     it('big screen has desktop image', function() {
 
      //   window.resizeTo(1480, 1000);
         var width = window.innerWidth;
         console.log("evo " + width + " ");
-        expect(img.getAttribute("src")).toBe("images/illustration-woman-online-desktop.svg");
+        expect(window.getComputedStyle(figureDeskt).getPropertyValue("display"))
+                     .toBe("block");
         window.resizeBy(50, 100);
         width = window.innerWidth;
         console.log("evo 2 " + width + " ");
 
     });
-*/
+
+    it('three figures for desktop version', function() {
+
+        expect(desktops.length).toBe(3);
+
+    })
+
+
+    it('there is figure with cube', function() {
+
+        expect(figures[4].children[0].getAttribute("src")).toBe("images/illustration-box-desktop.svg");
+
+    })
+
+    it('there is figure with desktop shadow', function() {
+
+        expect(shadowDesktImage.getAttribute("src")).toBe("images/bg-pattern-desktop.svg");
+
+    })
+
+    it('shadow desktop visible', function() {
+
+        expect(window.getComputedStyle(figures[4]).getPropertyValue("display")).toBe("block");
+
+    })
+
+    it('desktop image wrapper is under wrapper', function() {
+
+        expect(sectDeskt.tagName).toBe("SECTION");        
+
+    })
+
+
+    it('sectDesk has three children', function() {
+
+        expect(sectDeskt.children.length).toBe(2);
+
+    })
+
+    it('sectDesk has height 507px', function() {
+
+        expect(window.getComputedStyle(sectDeskt).getPropertyValue("height")).toBe("507px");
+
+    })
+
+    it('one line closed question', function() {
+
+        expect(window.getComputedStyle(document.querySelectorAll(".one-question.closed")[0]).getPropertyValue("height")).toBe("51px");
+
+    })
+
+    it('sectDesk has width 388px', function() {
+
+        expect(window.getComputedStyle(sectDeskt).getPropertyValue("width")).toBe("390px");
+
+    })
+
+    it('desktop 1 width is 472px', function() {
+
+        expect(window.getComputedStyle(figureDeskt).getPropertyValue("width")).toBe("472px");         
+
+    })
+    
+    it('desktop 1 height is 359px', function() {
+
+        expect(window.getComputedStyle(figureDeskt).getPropertyValue("height")).toBe("359px");         
+
+    })     
+
+    it('desktop 0 width is 966px', function() {
+
+        expect(window.getComputedStyle(shadowDeskt).getPropertyValue("width")).toBe("966px");         
+
+    })
+
+    it('desktop 0 height is 945px', function() {
+
+        expect(window.getComputedStyle(shadowDeskt).getPropertyValue("height")).toBe("945px");         
+
+    }) 
+
+    it('sectDesk position is relative', function() {
+
+        expect(window.getComputedStyle(sectDeskt).getPropertyValue("position")).toBe("relative"); 
+
+    })
+
+    it('figureDeskt left -84px', function() {
+
+        /*   right 80px, top 70px ? prema paintu
+           isprobaj .woman kad je right: 0, i svi pravci npr da su nula, tj kako se orijentiše woman */
+        expect(window.getComputedStyle(figureDeskt).getPropertyValue("left")).toBe("-84px");         
+    
+    })
+
+    it('shadowDeskt left -576px', function() {
+
+        /*   right 80px, top 70px ? prema paintu
+           isprobaj .woman kad je right: 0, i svi pravci npr da su nula, tj kako se orijentiše woman */
+        expect(window.getComputedStyle(shadowDeskt).getPropertyValue("left")).toBe("-576px");         
+    
+    })
+
+    it('shadowDeskt bottom 300px', function() {
+
+        expect(window.getComputedStyle(shadowDeskt).getPropertyValue("bottom")).toBe("-138px");   
+
+    })
+
+    it('shadowDeskt top -300px', function() {
+
+        expect(window.getComputedStyle(shadowDeskt).getPropertyValue("top")).toBe("-300px");   
+
+    })
+
+    it('sectDesk overflow hidden?', function() {
+
+        expect(window.getComputedStyle(sectDeskt).getPropertyValue("overflow")).toBe("hidden");
+
+    })
+
+    it('sectDesk parent are questions?', function() {
+
+        expect(sectDeskt.parentElement.getAttribute("class")).toBe("questions");
+
+    })
+
+    it('sectDesk parent is section?', function() {
+
+        expect(sectDeskt.parentElement.tagName).toBe("SECTION");
+
+    })
+
+    it('three children of "questions"', function() {
+
+     /*   two sections children of question, FAQ and pitanja u drugom */
+        expect(questions.children.length).toBe(3);
+
+    })
+
+    it('h1 parent is section', function() {
+
+        expect(h1.parentElement.tagName).toBe("SECTION");
+
+    })
+
+    it('questions are flex', function() {
+
+        expect(window.getComputedStyle(questions).getPropertyValue("display")).toBe("flex");
+
+    })
+
+    it('main is auto', function() {
+
+        expect(window.getComputedStyle(main).getPropertyValue("width")).toBe("920px");
+
+    })
+
+    it('pitanja are 352px width', function() {
+
+        expect(window.getComputedStyle(justQ).getPropertyValue("width")).toBe("352px");
+
+    })
+
+    it('second child of questions has some class', function() {
+
+        expect(questions.children[1].getAttribute("class")).toBe("desktop cube");
+
+    })
+
+    it('desktPitanja has margin-top 66px', function() {
+    
+        expect(window.getComputedStyle(desktPitanja).getPropertyValue("margin-top")).toBe("66px");
+
+    })
+
+    it('big-image margin-right is 85px', function() {
+
+        expect(window.getComputedStyle(sectDeskt).getPropertyValue("margin-right")).toBe("85px");
+
+    })
+
+    it('button margin-right is 12px', function() {
+
+        expect(window.getComputedStyle(buttons[0]).getPropertyValue("margin-right")).toBe("12px");
+
+    })
+
+    it('h1 is left-start', function() {
+
+        expect(window.getComputedStyle(h1).getPropertyValue("text-align")).toBe("start");
+
+    })
+
+    it('footer is 128px height', function() {
+
+        expect(window.getComputedStyle(footer).getPropertyValue("height")).toBe("128px");
+     /*   ovo se rešava preko margine za p */
+    })
+
+    it('cube is top 202px', function() {
+
+        expect(window.getComputedStyle(desktops[2]).getPropertyValue("top")).toBe("202px");
+
+    })
+
+    it('cube is left -93px', function() {
+
+        expect(window.getComputedStyle(desktops[2]).getPropertyValue("left")).toBe("-93px");
+
+    })
+
+    it('cube is 191px width', function() {
+
+        expect(window.getComputedStyle(desktops[2]).getPropertyValue("width")).toBe("191px");
+
+    })
+
+    it('cube is 184px height', function() {
+
+        expect(window.getComputedStyle(desktops[2]).getPropertyValue("height")).toBe("184px");
+
+    })
+
+    it('cube\'s parent are questions', function() {
+
+        expect(desktops[2].parentElement.getAttribute("class")).toBe("questions");        
+
+    })
+
+    it('questions position is relative', function() {
+
+        expect(window.getComputedStyle(questions).getPropertyValue("position")).toBe("relative");       
+
+    })
+    
+    it('questions bottom is 0px', function() {
+
+        expect(window.getComputedStyle(questions).getPropertyValue("bottom")).toBe("0px");  
+
+    })
+
+    it('figureDeskt top 67px', function() {
+
+        expect(window.getComputedStyle(figureDeskt).getPropertyValue("top")).toBe("67px");
+
+    }) 
+
+    it('padding bottom desktPitanja 85px', function() {
+
+        expect(window.getComputedStyle(desktPitanja).getPropertyValue("padding-bottom")).toBe("85px");
+
+    })
+
+    it('click of question opens big-image too, no fixed height', function() {
+
+        questionOneList[2].click();
+        expect(window.getComputedStyle(sectDeskt).getPropertyValue("height")).toBe("571px");
+        questionOneList[2].click();
+
+    })
+
+    it('woman right 2px', function() {
+
+        expect(window.getComputedStyle(figureDeskt).getPropertyValue("right")).toBe("2px");
+
+    })
+
+    it('pattern right 0px', function() {
+
+        expect(window.getComputedStyle(shadowDeskt).getPropertyValue("right")).toBe("0px");
+
+    })
 
 });

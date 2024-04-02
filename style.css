@@ -18,7 +18,6 @@ body {
     font-size: 12px;
     font-family: 'Kumbh Sans', sans-serif;
     margin: 0px;
- /*   height: 100%;*/
     min-height: 977px;  
     box-sizing: border-box;
     display: flex;
@@ -48,9 +47,10 @@ main {
     main {
 
         padding-top: 128px;
+        width: 920px;
 
     }
-
+   
 }
 
 figure {
@@ -62,10 +62,30 @@ figure {
     left: 43.5px;    
     z-index: 2;
     bottom: 460px;
-    top: 40px;
-  /*  display: none;*/
-    commituj trenutno stanje celog projekta pre nego što kreneš da ga mrljaš dalje
-    šta dalje treba: display none ovde, pa mob verzija; pa veliko da se vide druge slike
+    top: 38px;
+
+}
+
+.desktop {
+
+    display: none;
+    
+}
+
+@media only screen and (min-width: 1000px) {
+
+    figure {
+
+        display: none;
+
+    }
+
+    .desktop {
+
+        display: block;
+
+    }
+   
 }
 
 .shadow {
@@ -73,7 +93,7 @@ figure {
     width: 240px;
     margin-top: 0;
     height: 104px;
-    top: 145px;
+    top: 143px;
     bottom: 430px;
     position: absolute;
     left: 42.5px;
@@ -88,10 +108,11 @@ figure {
     bottom: 174px;
     z-index: 0;
     box-sizing: border-box;
-    width: 325px;
+    width: 100%;
     margin: 0 auto;    
     
 }
+
 
 h1 {
 
@@ -100,6 +121,26 @@ h1 {
     text-align: center;
     margin: 0 0 14px;
     color: var(--heading);
+
+}
+
+
+@media only screen and (min-width: 1000px) {
+
+    .questions {
+
+        display: flex;
+        padding: 0;
+        position: relative;
+        bottom: 0px;
+
+    }
+
+    h1 {
+
+        text-align: start;
+        margin-bottom: 20px;
+    }
 
 }
 
@@ -112,7 +153,8 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;  
-    cursor: pointer;     
+    cursor: pointer;    
+    box-sizing: border-box; 
 
 }
 
@@ -145,6 +187,16 @@ button {
     background-color: rgba(0, 0, 0, 0);
     height: 12px;
     cursor: pointer;
+
+}
+
+@media only screen and (min-width: 1000px) {
+
+    button {
+
+        margin-right: 12px;
+
+    }
 
 }
 
@@ -181,5 +233,83 @@ footer p {
     margin: 33px 0;
 
 }
+
+@media only screen and (min-width: 1000px) {
+
+    footer p {
+
+        margin: 57px 0;
+
+    }
+
+}
+
+section.big-image {
+    
+    width: 390px;
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+
+.desktPitanja {
+
+    padding-bottom: 0;
+
+}
+
+@media only screen and (min-width: 1000px) {
+
+    section.big-image {
+
+        display: block;
+        margin-right: 85px;
+
+    }
+
+    #pitanja {
+
+        width: 352px;
+
+    }
+
+    .desktPitanja {
+
+        margin-top: 66px;
+        padding-bottom: 85px;
+
+    }
+}
+
+.woman {
+
+    width: 472px;
+    height: 359px;
+    right: 2px;
+    left: auto;
+    top: 67px;  
+
+}
+
+.pattern {
+
+    width: 966px;
+    height: 945px;
+    left: auto;
+    right: 0px;
+    bottom: -138px; 
+    top: -300px;
+
+}
+
+.cube {
+
+    top: 202px;
+    left: -93px;
+    width: 191px;
+    height: 184px;
+    
+}
+
 
 

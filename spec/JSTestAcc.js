@@ -1,7 +1,8 @@
 describe('FAQ', function() {
-
-    var img = document.getElementsByTagName("img")[0];    
-    var shadow = document.getElementsByTagName("figure")[1];
+    var figures = document.getElementsByTagName("figure");
+    var images = document.getElementsByTagName("img");
+    var img = images[0];    
+    var shadow = figures[1];
     var body = document.getElementsByTagName("body")[0];
     var h1 = questions.querySelector("h1");
     var buttons = questions.querySelectorAll("button");
@@ -11,7 +12,9 @@ describe('FAQ', function() {
     var main = document.getElementsByTagName("main")[0];
     var footer = document.getElementsByTagName("footer")[0];
     var copy = footer.querySelector("p");
-
+    var desktFigure = figures[2];
+    var desktImg = images[2];
+    var sectDeskt = desktFigure.parentElement;
     
     function extractPxValue(pxValue) {
 
@@ -25,6 +28,18 @@ describe('FAQ', function() {
                 - extractPxValue(window.getComputedStyle(smaller).getPropertyValue("width"))) / 2;
 
     }
+
+    it('desktop img in figure', function() {
+
+        expect(desktImg.parentNode.tagName).toBe("FIGURE");
+
+    })
+
+    it('desktop figure display none', function() {
+
+        expect(window.getComputedStyle(desktFigure).getPropertyValue("display")).toBe("none");
+
+    })
 
     it('second figure', function() {
         
@@ -188,7 +203,6 @@ describe('FAQ', function() {
 
     it('second child in the first question is a button', function() { 
 
-        // second child da bude button, pa vezati sličicu strelice na njega https://www.w3schools.com/jsref/prop_node_childnodes.asp
         for (var i = 0; i < 2; i++) {
 
             expect(questionOneList[i].childNodes[3].tagName).toBe("BUTTON");
@@ -672,10 +686,10 @@ describe('FAQ', function() {
 
     });
 
-    it('shadow is top 145px', function() {
+    it('shadow is top 143px', function() {
 
         expect(window.getComputedStyle(shadow).getPropertyValue("top"))
-                                              .toBe("145px");
+                                              .toBe("143px");
 
     });
     
@@ -693,10 +707,10 @@ describe('FAQ', function() {
 
     });
 
-    it('figure top is 40', function() {
+    it('figure top is 38px', function() {
 
         expect(window.getComputedStyle(figure).getPropertyValue("top"))
-                                              .toBe("40px");
+                                              .toBe("38px");
 
     });
 
@@ -826,17 +840,23 @@ describe('FAQ', function() {
                                               .toBe("auto");
 
     }); 
-/*
-    it('big screen, desktop image', function() {
 
-        window.resizeTo(1480, 1000);
-        var width = window.innerWidth;
-        console.log("evo " + width + " ");
-        expect(img.getAttribute("src")).toBe("images/illustration-woman-online-desktop.svg");
-        window.resizeTo(500, 1000);
-        width = window.innerWidth;
-        console.log("evo " + width + " ");
+    
+    it('five figures', function() {
 
-    });
-*/
+        expect(figures.length).toBe(5);
+
+    })
+
+    it('sectDesk display none?', function() {
+
+        expect(window.getComputedStyle(sectDeskt).getPropertyValue("display")).toBe("none");
+
+    })
+
+    it('desktPitanja padding-bottom 0', function() {
+
+        expect(window.getComputedStyle(desktPitanja).getPropertyValue("padding-bottom")).toBe("0px");
+
+    })
 });
