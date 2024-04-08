@@ -1052,4 +1052,16 @@ describe('FAQ', function() {
 
     })
 
+    it('main padding-left 42px to try', function() {
+
+        expect(window.getComputedStyle(main).getPropertyValue("padding-left")).toBe("42px");
+
+    })
+
+    it('main is border-box', function() {
+
+        expect(window.getComputedStyle(main).getPropertyValue("box-sizing")).toBe("border-box");
+
+    })
+
 });

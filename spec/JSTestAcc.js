@@ -859,4 +859,10 @@ describe('FAQ', function() {
         expect(window.getComputedStyle(desktPitanja).getPropertyValue("padding-bottom")).toBe("0px");
 
     })
+
+    it('box-shadow is there', function() {
+
+        expect(window.getComputedStyle(questions).getPropertyValue("box-shadow")).toBe("rgb(99, 68, 188) 0px 20px 20px 0px");
+
+    })
 });
