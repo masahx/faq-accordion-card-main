@@ -16,6 +16,7 @@ var justQ = questions.querySelector("#pitanja");
 var figure = document.getElementsByTagName("figure")[0];    
 var html = document.getElementsByTagName("html")[0];
 var desktPitanja = document.querySelectorAll(".desktPitanja")[0];
+var myDir = "";
 
 function togle(oneQElem) {
 

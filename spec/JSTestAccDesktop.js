@@ -1061,6 +1061,7 @@ describe('FAQ', function() {
     it('main is border-box', function() {
 
         expect(window.getComputedStyle(main).getPropertyValue("box-sizing")).toBe("border-box");
+        console.log("hejj " + JSON.stringify(location));
 
     })
 
