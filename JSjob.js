@@ -6,6 +6,8 @@ const answers = ["Click \“Forgot password\” from the login page or \“Chang
 "Yes! Send us a message and we’ll process your request no questions asked",
 "Chat and email support is available 24/7. Phone lines are open during normal business hours"];
 
+const DDIR = "faq-accordion-card-main/index.html";
+var myDir = "file:///C:/Users/Masha/Downloads/";
 var questionOneList = document.getElementsByClassName("one-question");
 var question = questionOneList[0];
 var queOpen = questionOneList[1];
@@ -16,7 +18,7 @@ var justQ = questions.querySelector("#pitanja");
 var figure = document.getElementsByTagName("figure")[0];    
 var html = document.getElementsByTagName("html")[0];
 var desktPitanja = document.querySelectorAll(".desktPitanja")[0];
-var myDir = "";
+
 
 function togle(oneQElem) {
 

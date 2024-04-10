@@ -143,6 +143,13 @@ describe('JS', function() {
 
     })
 
+    it('first part of path', function() {
+
+        var myHref = location.href;
+        expect(myDir).toBe(myHref.slice(0, myHref.lastIndexOf(DDIR)));
+
+    })
+
 
 
 })

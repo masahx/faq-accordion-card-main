@@ -318,7 +318,7 @@ describe('FAQ', function() {
   
         for (button of buttons) { 
             expect(window.getComputedStyle(button).getPropertyValue("background-image"))
-                         .toBe("url(\"file:///C:/Users/Masha/Downloads/faq-accordion-card-main/images/icon-arrow-down.svg\")");     
+                         .toBe("url(\"" + myDir + "faq-accordion-card-main/images/icon-arrow-down.svg\")");     
         
         }                 
     })

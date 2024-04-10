@@ -301,14 +301,6 @@ describe('FAQ', function() {
 
     })
 
-    it('button has bckg image', function() {
-  
-        for (button of buttons) { 
-            expect(window.getComputedStyle(button).getPropertyValue("background-image"))
-                         .toBe("url(\"file:///C:/Users/Masha/Downloads/faq-accordion-card-main/images/icon-arrow-down.svg\")");     
-        
-        }                 
-    })
 
     it('button has bckg image no-repeat', function() {
   
