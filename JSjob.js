@@ -7,7 +7,8 @@ const answers = ["Click \“Forgot password\” from the login page or \“Chang
 "Chat and email support is available 24/7. Phone lines are open during normal business hours"];
 
 const DDIR = "faq-accordion-card-main/index.html";
-var myDir = "file:///C:/Users/Masha/Downloads/";
+var myHref = location.href;
+var myDir = myHref.slice(0, myHref.lastIndexOf(DDIR));
 var questionOneList = document.getElementsByClassName("one-question");
 var question = questionOneList[0];
 var queOpen = questionOneList[1];
