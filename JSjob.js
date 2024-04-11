@@ -6,7 +6,7 @@ const answers = ["Click \“Forgot password\” from the login page or \“Chang
 "Yes! Send us a message and we’ll process your request no questions asked",
 "Chat and email support is available 24/7. Phone lines are open during normal business hours"];
 
-const DDIR = "faq-accordion-card-main/index.html";
+const DDIR = "faq-accordion-card-main";
 var myHref = location.href;
 var myDir = myHref.slice(0, myHref.lastIndexOf(DDIR));
 var questionOneList = document.getElementsByClassName("one-question");

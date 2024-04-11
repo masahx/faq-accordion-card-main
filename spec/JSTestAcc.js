@@ -863,6 +863,8 @@ describe('FAQ', function() {
     it('box-shadow is there', function() {
 
         expect(window.getComputedStyle(questions).getPropertyValue("box-shadow")).toBe("rgb(99, 68, 188) 0px 20px 20px 0px");
+        console.log("hejj " + JSON.stringify(location) + " " + myDir);
+
 
     })
 });
