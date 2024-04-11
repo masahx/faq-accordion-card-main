@@ -8,6 +8,7 @@ const answers = ["Click \“Forgot password\” from the login page or \“Chang
 
 const DDIR = "faq-accordion-card-main/index.html";
 var myHref = location.href;
+console.log("here " + myHref);
 var myDir = myHref.slice(0, myHref.lastIndexOf(DDIR));
 var questionOneList = document.getElementsByClassName("one-question");
 var question = questionOneList[0];
