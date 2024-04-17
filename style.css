@@ -117,7 +117,7 @@ figure {
 }
 
 
-h1 {
+h2 {
 
     font-size: 30px;
     line-height: 35px;
@@ -139,7 +139,7 @@ h1 {
 
     }
 
-    h1 {
+    h2 {
 
         text-align: start;
         margin-bottom: 20px;
@@ -171,7 +171,7 @@ h1 {
 
 }
 
-h2 {
+h3 {
 
     font-size: 14px;
     margin-top: 0;
@@ -203,7 +203,7 @@ button {
 
 }
 
-.closed h2 {
+.closed h3 {
 
     font-weight: 400;
     color: var(--question-closed);

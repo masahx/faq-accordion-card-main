@@ -18,7 +18,7 @@ describe('JS', function() {
 
         question.click();
         question.click();
-        expect(window.getComputedStyle(h2s[0]).getPropertyValue("font-weight"))
+        expect(window.getComputedStyle(h3s[0]).getPropertyValue("font-weight"))
                      .toBe("400");
 
     });
@@ -26,7 +26,7 @@ describe('JS', function() {
     it('open question', function() {
 
         question.click();
-        expect(window.getComputedStyle(h2s[0]).getPropertyValue("font-weight"))
+        expect(window.getComputedStyle(h3s[0]).getPropertyValue("font-weight"))
                      .toBe("700");
         question.click();
 
@@ -62,9 +62,9 @@ describe('JS', function() {
 
     })
 
-    it('first child in .one-question is h2', function() {
+    it('first child in .one-question is h3', function() {
 
-        questiones.forEach((q) => expect(q.children[0].tagName).toBe("H2"));
+        questiones.forEach((q) => expect(q.children[0].tagName).toBe("H3"));
 
     })
 

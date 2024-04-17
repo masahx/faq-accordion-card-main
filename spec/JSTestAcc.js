@@ -4,9 +4,9 @@ describe('FAQ', function() {
     var img = images[0];    
     var shadow = figures[1];
     var body = document.getElementsByTagName("body")[0];
-    var h1 = questions.querySelector("h1");
+    var h2 = questions.querySelector("h2");
     var buttons = questions.querySelectorAll("button");
-    var closedTitle = document.querySelector(".closed h2");
+    var closedTitle = document.querySelector(".closed h3");
     var answer = questionOneList[1].querySelectorAll("p")[0];
     var headingColor = "rgb(29, 30, 53)";
     var main = document.getElementsByTagName("main")[0];
@@ -143,15 +143,15 @@ describe('FAQ', function() {
 
     })
 
-    it('font size h1 FAQ section', function() {
+    it('font size h2 FAQ section', function() {
 
-        expect(window.getComputedStyle(h1).getPropertyValue("font-size")).toBe("30px");
+        expect(window.getComputedStyle(h2).getPropertyValue("font-size")).toBe("30px");
 
     })
 
-    it('align center h1 FAQ section', function() {
+    it('align center h2 FAQ section', function() {
 
-        expect(window.getComputedStyle(h1).getPropertyValue("text-align")).toBe("center");
+        expect(window.getComputedStyle(h2).getPropertyValue("text-align")).toBe("center");
 
     })
 
@@ -161,15 +161,15 @@ describe('FAQ', function() {
 
     })
     
-    it('margin-top h1 FAQ section', function() {
+    it('margin-top h2 FAQ section', function() {
 
-        expect(window.getComputedStyle(h1).getPropertyValue("margin-top")).toBe("0px");
+        expect(window.getComputedStyle(h2).getPropertyValue("margin-top")).toBe("0px");
 
     })
 
-    it('margin-bottom h1 FAQ section', function() {
+    it('margin-bottom h2 FAQ section', function() {
 
-        expect(window.getComputedStyle(h1).getPropertyValue("margin-bottom")).toBe("14px");
+        expect(window.getComputedStyle(h2).getPropertyValue("margin-bottom")).toBe("14px");
 
     })
 
@@ -185,11 +185,11 @@ describe('FAQ', function() {
 
     })
 
-    it('h2s are 14px', function() {
+    it('h3s are 14px', function() {
 
-        for (h2 of h2s) {
+        for (h3 of h3s) {
 
-            expect(window.getComputedStyle(h2).getPropertyValue("font-size")).toBe("14px");
+            expect(window.getComputedStyle(h3).getPropertyValue("font-size")).toBe("14px");
 
         }        
 
@@ -234,18 +234,18 @@ describe('FAQ', function() {
 
     it('h2 no top margin', function() {
 
-        for (h2 of h2s) {
+        for (h3 of h3s) {
 
-            expect(window.getComputedStyle(h2).getPropertyValue("margin-top")).toBe("0px");
+            expect(window.getComputedStyle(h3).getPropertyValue("margin-top")).toBe("0px");
             
         }
 
     })
 
-    it('h2 no bottom margin', function() {
+    it('h3 no bottom margin', function() {
   
 
-        expect(window.getComputedStyle(h2s[0]).getPropertyValue("margin-bottom")).toBe("0px");            
+        expect(window.getComputedStyle(h3s[0]).getPropertyValue("margin-bottom")).toBe("0px");            
         
 
     })
@@ -426,9 +426,9 @@ describe('FAQ', function() {
 
     })
 
-    it('h1 heading color', function() {
+    it('h2 heading color', function() {
 
-        expect(window.getComputedStyle(h1).getPropertyValue("color")).toBe(headingColor);
+        expect(window.getComputedStyle(h2).getPropertyValue("color")).toBe(headingColor);
 
     })
 
@@ -450,11 +450,11 @@ describe('FAQ', function() {
 
     })
 
-    it('h2 width is 270px', function() {
+    it('h3 width is 270px', function() {
 
-        for (h2 of h2s) {
+        for (h3 of h3s) {
 
-            expect(window.getComputedStyle(h2).getPropertyValue("width")).toBe("270px");
+            expect(window.getComputedStyle(h3).getPropertyValue("width")).toBe("270px");
             
         }
 
@@ -519,9 +519,9 @@ describe('FAQ', function() {
 
     })
 
-    it('h2 has bluish dark color', function() {
+    it('h3 has bluish dark color', function() {
 
-        expect(window.getComputedStyle(h2s[1]).getPropertyValue("color")).toBe(headingColor);          
+        expect(window.getComputedStyle(h3s[1]).getPropertyValue("color")).toBe(headingColor);          
 
     })
 
@@ -867,4 +867,25 @@ describe('FAQ', function() {
 
 
     })
+
+    it('mobile shadow image has alt', function() {
+
+        expect(images[1].getAttribute("alt")).toBe("mobile image shadow");
+
+    })
+
+    it('h2 variable is h2', function() {
+
+        expect(h2.tagName).toBe("H2");
+        console.log(h2.innerHTML + " x " + h2.tagName);
+
+    })
+
+    it('current h3s are h3', function() {
+
+        h3s.forEach(h3 => expect(h3.tagName).toBe("H3"));
+
+    })
+
+    
 });

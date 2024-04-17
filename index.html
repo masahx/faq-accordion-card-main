@@ -14,12 +14,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">   
 
   <title>Frontend Mentor | FAQ Accordion Card</title>
- <!--
+
   <script src="lib/jasmine-5.1.0/jasmine.js"></script>
   <script src="lib/jasmine-5.1.0/jasmine-html.js"></script>
-  <script src="lib/jasmine-5.1.0/boot0.js"></script>   -->
+  <script src="lib/jasmine-5.1.0/boot0.js"></script>   <!-- -->
  <!-- optional: include a file here that configures the Jasmine env -->
- <!-- <script src="lib/jasmine-5.1.0/boot1.js"></script>      -->
+  <script src="lib/jasmine-5.1.0/boot1.js"></script> <!--     -->
  <!--  Feel free to remove these styles or customise in your own stylesheet 👍  -->
 
   <style>
@@ -33,7 +33,7 @@
       <img src="images/illustration-woman-online-mobile.svg" alt="colorful illustration mobile">        
     </figure>
     <figure class="shadow">
-      <img src="images/bg-pattern-mobile.svg">
+      <img src="images/bg-pattern-mobile.svg" alt="mobile image shadow">
     </figure>    
     <section class="questions"> 
       <section class="big-image">
@@ -48,15 +48,15 @@
         <img src="images/illustration-box-desktop.svg" alt="cube box part desktop">
       </figure>  
       <section class="desktPitanja"> 
-        <h1>FAQ</h1>
+        <h2>FAQ</h2>
         <section id="pitanja">
           <section class="one-question closed" onclick="togle(this)">
-            <h2>How many team members can I invite?</h2>
+            <h3>How many team members can I invite?</h3>
             <button></button>
             <p>You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</p>
           </section> 
           <section class="one-question opened" onclick="togle(this)">
-            <h2>What is the maximum upload size?</h2>    
+            <h3>What is the maximum upload size?</h3>    
             <button></button>
             <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
           </section>
@@ -93,7 +93,7 @@
 <script src="JSjob.js"></script>
 
   <!-- include spec files here... mob 375px, desktop 1440px (in style guide) -->
-<!--  <script src="spec/JSTestAcc.js"></script>       
-<script src="spec/JSTestAccDesktop.js"></script>   
-<script src="spec/JSTestJS.js"></script> -->
+  <script src="spec/JSTestAcc.js"></script>       
+<!-- <script src="spec/JSTestAccDesktop.js"></script>   -->
+<script src="spec/JSTestJS.js"></script> 
 </html>

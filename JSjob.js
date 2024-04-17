@@ -12,7 +12,7 @@ var myDir = myHref.slice(0, myHref.lastIndexOf(DDIR));
 var questionOneList = document.getElementsByClassName("one-question");
 var question = questionOneList[0];
 var queOpen = questionOneList[1];
-var h2s = document.querySelectorAll("h2");
+var h3s = document.querySelectorAll("h3");
 var answer = questionOneList[1].querySelectorAll("p")[0];
 var questions = document.getElementsByClassName("questions")[0];
 var justQ = questions.querySelector("#pitanja");
@@ -28,11 +28,11 @@ function togle(oneQElem) {
 
 }   
 
-function makeH2Node(i) {
+function makeH3Node(i) {
 
-    var h2 = document.createElement("h2");
-    h2.innerHTML = headings2[i] + "?";
-    return h2;
+    var h3 = document.createElement("h3");
+    h3.innerHTML = headings2[i] + "?";
+    return h3;
 
 }
 
@@ -81,7 +81,7 @@ for(var i = 0; i < 3; i++) {
 
     node = document.createElement("section");
 
-    node.appendChild(makeH2Node(i));  
+    node.appendChild(makeH3Node(i));  
     node.appendChild(document.createElement("button"));
     node.appendChild(makePNode(i));
     node.setAttribute("class", "one-question closed");  
