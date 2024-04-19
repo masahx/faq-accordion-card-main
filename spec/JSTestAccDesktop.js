@@ -798,7 +798,7 @@ describe('FAQ', function() {
 
     it('desktop image wrapper is under wrapper', function() {
 
-        expect(sectDeskt.tagName).toBe("SECTION");        
+        expect(sectDeskt.tagName).toBe("DIV");        
 
     })
 
@@ -899,7 +899,7 @@ describe('FAQ', function() {
 
     it('sectDesk parent is section?', function() {
 
-        expect(sectDeskt.parentElement.tagName).toBe("SECTION");
+        expect(sectDeskt.parentElement.tagName).toBe("DIV");
 
     })
 
@@ -1054,6 +1054,12 @@ describe('FAQ', function() {
 
         expect(window.getComputedStyle(main).getPropertyValue("box-sizing")).toBe("border-box");
         console.log("hejj " + JSON.stringify(location));
+
+    })
+
+    it('questions are div', function() {
+
+        expect(questions.tagName).toBe("DIV");
 
     })
 

@@ -247,7 +247,7 @@ footer p {
 
 }
 
-section.big-image {
+div.big-image {
     
     width: 390px;
     position: relative;
@@ -263,7 +263,7 @@ section.big-image {
 
 @media only screen and (min-width: 1000px) {
 
-    section.big-image {
+    div.big-image {
 
         display: block;
         margin-right: 85px;

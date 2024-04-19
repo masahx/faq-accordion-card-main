@@ -887,5 +887,11 @@ describe('FAQ', function() {
 
     })
 
+    it('#pitanja are DIV', function() {
+
+        expect(justQ.tagName).toBe("DIV");
+
+    })
+
     
 });
