@@ -7,12 +7,13 @@ const answers = ["Click \“Forgot password\” from the login page or \“Chang
 "Chat and email support is available 24/7. Phone lines are open during normal business hours"];
 
 const DDIR = "faq-accordion-card-main";
+const BUTTON_ID = "b";
+const QUE = "que";
 var myHref = location.href;
 var myDir = myHref.slice(0, myHref.lastIndexOf(DDIR));
 var questionOneList = document.getElementsByClassName("one-question");
 var question = questionOneList[0];
 var queOpen = questionOneList[1];
-var h3s = document.querySelectorAll("h3");
 var answer = questionOneList[1].querySelectorAll("p")[0];
 var questions = document.getElementsByClassName("questions")[0];
 var justQ = questions.querySelector("#pitanja");
@@ -31,6 +32,7 @@ function togle(oneQElem) {
 function makeH3Node(i) {
 
     var h3 = document.createElement("h3");
+    h3.setAttribute("id", QUE + (i + 2));
     h3.innerHTML = headings2[i] + "?";
     return h3;
 
@@ -73,7 +75,7 @@ function whichTestFile() {
 }
 
 
-var node;
+var node, b;
 
 window.resizeTo(1480, 1000);
 
@@ -82,7 +84,10 @@ for(var i = 0; i < 3; i++) {
     node = document.createElement("section");
 
     node.appendChild(makeH3Node(i));  
-    node.appendChild(document.createElement("button"));
+    b = document.createElement("button");
+    b.setAttribute("id", BUTTON_ID + (i + 2));
+    b.setAttribute("aria-labelledby", QUE + (i + 2));
+    node.appendChild(b);
     node.appendChild(makePNode(i));
     node.setAttribute("class", "one-question closed");  
     node.setAttribute("onclick", "togle(this)");
@@ -90,4 +95,5 @@ for(var i = 0; i < 3; i++) {
 
 }
 
+var h3s = document.querySelectorAll("h3");
 

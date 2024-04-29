@@ -893,5 +893,59 @@ describe('FAQ', function() {
 
     })
 
+    it('h3[0] ima id que0', function() {
+
+        expect(h3s[0].getAttribute("id")).toBe("que0");
+        console.log(h3s[0].getAttribute("id"));
+
+    })
+
+    it('h3[i] ima id quei', function() {
+
+        console.log("broj " + (h3s.length - 1));
+        for(let i=1; i < h3s.length; i++) {
+
+            expect(h3s[i].getAttribute("id")).toBe("que" + i);
+            console.log(i + " " + h3s[i].getAttribute("id"));
+          
+            /* vidi kako treba na frontendmentor.io i ono oko dugmeta button, aria... */
+
+        }
+
+    
+    })
+
+    it('buttons[0] ima id, npr b0', function() {
+
+        expect(buttons[0].getAttribute("id")).toBe("b0");        
+
+    })
+
+    it('ostali buttons imaju isto id bi', function() {
+
+        for(let i = 1; i < buttons.length; i++) {
+
+            expect(buttons[i].getAttribute("id")).toBe("b" + i);
+
+        }
+
+    })
+
+    it('buttons[0] ima aria-labelledby', function() {
+
+        expect(buttons[0].getAttribute("aria-labelledby")).toBe("que0");        
+
+    })
+
+    it('ostali buttons imaju isto aria-labelledby', function() {
+
+        for(let i = 1; i < buttons.length; i++) {
+
+            expect(buttons[i].getAttribute("aria-labelledby")).toBe("que" + i);
+
+        }
+
+    })
+
     
 });
